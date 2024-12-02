@@ -1,0 +1,3 @@
+cni:
+  binPath: /usr/lib/cni/
+kubeProxyReplacement: true
