@@ -1,3 +1,9 @@
 cni:
   binPath: /usr/lib/cni/
 kubeProxyReplacement: true
+ingressController:
+  enabled: true
+  default: true
+  loadbalancerMode: dedicated
+l2announcements:
+  enabled: true
