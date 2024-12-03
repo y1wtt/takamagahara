@@ -1,0 +1,17 @@
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: "all-nodes-l2-announcement"
+spec:
+  nodeSelector: {} # all nodes
+  interfaces: [] # all interfaces
+  loadBalancerIPs: true
+  externalIPs: true
+---
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: "external-ip-pool"
+spec:
+  blocks:
+    - cidr: "172.30.20.150/28"
