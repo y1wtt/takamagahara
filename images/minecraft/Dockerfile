@@ -11,11 +11,13 @@ ADD https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact
 RUN java -jar ./BuildTools.jar --rev ${VERSION}
 
 RUN mv ./spigot-${VERSION}.jar spigot.jar
-RUN echo "eula=true" > eula.txt
+RUN mkdir data
 
 FROM gcr.io/distroless/java21-debian12
 
 ARG VERSION
-COPY --from=builder /app/ ./
+COPY --from=builder /app/spigot.jar /app/spigot.jar
 
-ENTRYPOINT ["java","-jar", "spigot.jar"]
+WORKDIR /app/data/
+
+ENTRYPOINT ["java","-jar", "../spigot.jar"]
