@@ -14,4 +14,4 @@ metadata:
   name: "external-ip-pool"
 spec:
   blocks:
-    - cidr: "172.30.20.150/28"
+    - cidr: "172.24.33.192/26"

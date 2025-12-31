@@ -106,7 +106,7 @@ app:
     hosts:
       # Keep 'localhost' host only if you want to access Dashboard using 'kubectl port-forward ...' on:
       # https://localhost:8443
-      - dashboard.suzunaan.internal 
+      - dashboard.eientei.internal 
     # - kubernetes.dashboard.domain.com
     ingressClassName: cilium
     # Use only if your ingress controllers support default ingress classes.

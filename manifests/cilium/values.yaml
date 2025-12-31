@@ -1,6 +1,3 @@
-cni:
-  binPath: /usr/lib/cni/
-kubeProxyReplacement: true
 ingressController:
   enabled: true
   default: true
@@ -16,4 +13,19 @@ hubble:
     ingress:
       enabled: true
       hosts:
-        - hubble.suzunaan.internal
+        - hubble.eientei.internal
+
+kubeProxyReplacement: true
+k8sServiceHost: eientei.internal
+k8sServicePort: 6443
+
+envoy:
+  nodeSelector:
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+  tolerations:
+    - operator: Exists
+  affinity: {}
+
+operator:
+  replicas: 1
